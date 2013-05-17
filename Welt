@@ -1,0 +1,36 @@
+
+public class Welt {
+public double x;
+public double y;
+//welt sollte 910 * 910 Pixel groß sein ein Feld ist 70 Pixel bzw 0,6 Zentimeter
+public static void main (String [] args){
+  // static void nur zum Test
+	// neues Objekt wird erzeugt
+	Welt v1 = new Welt(910,910);
+	// textuelle Darstellung
+	System.out.print(v1);
+}
+
+public Welt(double xx, double yy){
+	x=xx;
+	y=yy;
+}
+//to String Methode überschrieben
+public String toString(){return " ( "+x+","+y+")";}
+//Gibt die Entfernung zum Ursprung zurück ( rechte obere Ecke= Uhrsprung)
+public double length () { return Math.sqrt(x*x+y*y);}
+
+public Welt skalarMult(double s){return new Welt(x*s,y*s);}
+
+public void skalarMultMod(double s){
+	x= s*x;
+	y=s*y;
+		
+}
+
+public void add(Welt v2){
+	x=x+v2.x;
+	y=y+v2.y;
+}
+
+}
